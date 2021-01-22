@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">USTH Thời Tiết</string>
+    <string name="monday">Thứ 2</string>
+    <string name="tuesday">Thứ 3</string>
+    <string name="wednesday">Thứ 4</string>
+    <string name="thursday">Thứ 5</string>
+    <string name="friday">Thứ 6</string>
+    <string name="saturday">Thứ 7</string>
+    <string name="sunday">Chủ Nhật</string>
+    <string name="mt">Mỹ Tho</string>
+    <string name="w1">0C\nTuyết rơi</string>
+    <string name="w2">Mỹ Tho\n24C - 31C</string>
+    <string name="w3">Dắk Lắk\n24C - 31C</string>
+    <string name="w4">Dắk Nông\n24C - 31C</string>
+    <string name="w5">Vũ Hán\n24C - 31C</string>
+    <string name="w6">Buôn Mê Thuột\n24C - 31C</string>
+    <string name="w7">Bắc Kạn\n24C - 31C</string>
+    <string name="w8">Kon Tum\n24C - 31C</string>
+	
+</resources>

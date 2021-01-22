@@ -1,77 +1,71 @@
 package vn.edu.usth.weather;
 
-import android.media.Image;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
 
 public class ForecastFragment extends Fragment {
-    WeatherAdapter adapter;
-    ArrayList<Weather> weathers;
 
+
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+
+    private String mParam1;
+    private String mParam2;
+
+    public ForecastFragment() {
+
+    }
+
+    
+    public static ForecastFragment newInstance(String param1, String param2) {
+        ForecastFragment fragment = new ForecastFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View forecastFragment = inflater.inflate(R.layout.forecastfragment, container, false);
-
-        RecyclerView recyclerView = forecastFragment.findViewById(R.id.recycler_view);
-
-        weathers = new ArrayList<Weather>();
-        String Date[] = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
-
-        String Mon = getContext().getResources().getString(R.string.Mon);
-        String Tue = getContext().getResources().getString(R.string.Tue);
-        String Wed = getContext().getResources().getString(R.string.Wed);
-        String Thu = getContext().getResources().getString(R.string.Thu);
-        String Fri = getContext().getResources().getString(R.string.Fri);
-        String Sat = getContext().getResources().getString(R.string.Sat);
-        String Sun = getContext().getResources().getString(R.string.Sun);
-
-        String Weather[] = {
-            (Mon + "\n24C - 31C"),
-            (Tue + "\n24C - 30C"),
-            (Wed + "\n22C - 23C"),
-            (Thu + "\n22C - 27C"),
-            (Fri + "\n22C - 30C"),
-            (Sat + "\n24C - 31C"),
-            (Sun + "\n25C - 28C")
-        };
-
-        int image[] = {
-                R.drawable.weather_icon,
-                R.drawable.rain_icon,
-                R.drawable.rain_icon,
-                R.drawable.rain_icon,
-                R.drawable.cloud_icon,
-                R.drawable.cloud_icon,
-                R.drawable.thunder_icon
-        };
-
-        for (int i = 0; i < Date.length; i++) {
-            weathers.add(new Weather(Date[i], image[i], Weather[i]));
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-        adapter = new WeatherAdapter(weathers, this.getContext());
-
-        recyclerView.setAdapter(adapter);
-        Log.e(getClass().getName(),"on view created");
-        return forecastFragment;
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        Log.e(getClass().getName(),"on Activity created");
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_forecast, container, false);
+        view.setBackgroundColor(0x0000FF00);
+
+        LinearLayout layout = new LinearLayout(getContext());
+        layout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        layout.setOrientation(LinearLayout.VERTICAL);
+
+        ImageView iv = new ImageView(getContext());
+        TextView tv = new TextView(getContext());
+
+        tv.setText("Thursday");
+        iv.setImageResource(R.drawable.ic_cloud_1);
+
+        layout.addView(iv);
+        layout.addView(tv);
+
+        return view;
     }
+
 }

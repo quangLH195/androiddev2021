@@ -1,12 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">USTH Weather</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="Mon">Partly Cloudy</string>
-    <string name="Tue">Showers</string>
-    <string name="Wed">Rain</string>
-    <string name="Thu">Scattered Showers</string>
-    <string name="Fri">Mostly Cloudy</string>
-    <string name="Sat">Partly Cloudy</string>
-    <string name="Sun">Thunderstorms</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="sunday">Sun</string>
+    <string name="mt">My Tho</string>
+    <string name="w1">0C\nSnowy</string>
+    <string name="w2">My Tho\n24C - 31C</string>
+    <string name="w3">Dak Lak\n24C - 31C</string>
+    <string name="w4">Dak Nong\n24C - 31C</string>
+    <string name="w5">Wuhan\n24C - 31C</string>
+    <string name="w6">Buon Me Thuot\n24C - 31C</string>
+    <string name="w7">Bac Kan\n24C - 31C</string>
+    <string name="w8">Kon Tum\n24C - 31C</string>
+
 </resources>
